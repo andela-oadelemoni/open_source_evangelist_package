@@ -1,0 +1,14 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "5.3.*",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+
+    "autoload": {
+        "psr-4": {"EvangelistStatus\\": "src/"}
+    },
+
+    "require": {
+    	"guzzlehttp/guzzle": "~6.0"
+    }
+}
