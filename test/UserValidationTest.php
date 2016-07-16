@@ -1,18 +1,21 @@
 <?php
-use EvangelistStatus\UserValidation;
+use Kamiye\OpenSource\GitHub;
 
 class UserValidationTest extends PHPUnit_Framework_TestCase {
 	
 	// Test invalid username
+	/**
+	 * @expectedException InvalidUsernameException
+	 */
 	public function testInvalidUsernameResponse() {
 		$invalidUsername = 'not-a-real-user';
-		$actual = UserValidation::verifyUsername($invalidUsername);
-		$this->assertFalse($actual);
+		$this->setExpectedException('\Kamiye\OpenSource\InvalidUsernameException');
+		$actual = GitHub::verifyUsername($invalidUsername);
 	}
 	// Test valid username
 	public function testValidUsernameResponse() {
 		$validUsername = 'andela-oadelemoni';
-		$actual = UserValidation::verifyUsername($validUsername);
+		$actual = GitHub::verifyUsername($validUsername);
 		$this->assertTrue($actual);
 	}
 

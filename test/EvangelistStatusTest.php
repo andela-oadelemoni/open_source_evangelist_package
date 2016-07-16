@@ -1,5 +1,5 @@
 <?php
-use EvangelistStatus\EvangelistStatus;
+use Kamiye\OpenSource\EvangelistStatus;
 
 class EvangelistStatusTest extends 	PHPUnit_Framework_TestCase {
 
@@ -15,8 +15,8 @@ class EvangelistStatusTest extends 	PHPUnit_Framework_TestCase {
 	public function testGetStatus_invalidUsername() {
 		$username = 'not-a-valid-username';
 		$evangelist = new EvangelistStatus($username);
+		$this->setExpectedException('\Kamiye\OpenSource\InvalidUsernameException');
 		$status = $evangelist->getStatus();
-		$this->assertRegExp('/I know you not/i', $status);
 	}
 
 }

@@ -1,11 +1,13 @@
 {
+    "name": "kamiye/opensource",
+    "description": "Package to check open source contribution on GitHub",
     "require-dev": {
         "phpunit/phpunit": "5.3.*",
         "guzzlehttp/guzzle": "~6.0"
     },
 
     "autoload": {
-        "psr-4": {"EvangelistStatus\\": "src/"}
+        "psr-4": {"Kamiye\\OpenSource\\": "src/"}
     },
 
     "require": {
